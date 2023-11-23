@@ -75,9 +75,9 @@ envelopesRouter.delete('/:id', (req, res) => {
 
 });
 
-envelopesRouter.post('/transfer/:from/:to', (req, res) => {
-    const fromId = req.params.from;
-    const toId = req.params.to;
+envelopesRouter.post('/transfer/:fromId/:toId', (req, res) => {
+    const fromId = req.params.fromId;
+    const toId = req.params.toId;
     const amount = req.body.amount;
     const foundEnvelopeFrom = envelopes.find((envelope) => envelope.id === parseInt(fromId));
     if (!foundEnvelopeFrom) {
